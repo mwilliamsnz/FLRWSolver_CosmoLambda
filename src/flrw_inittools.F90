@@ -58,7 +58,7 @@ contains
     a0      = FLRW_init_a                         ! Initial scale factor
     asq     = a0*a0                               ! Scale factor squared
     hub     = FLRW_init_HL / boxlen(1)            ! Initial Hubble parameter
-    rho0    = 3.0d0 * hub**2 / (8.0d0 * pi * asq) ! Initial background density from Friedmann eqn.
+    rho0    = 3.0d0 * hub**2 / (8.0d0 * pi * asq) - Lambda / (8.0d0 * pi) ! Initial background density from Friedmann eqn.
     rhostar = rho0 * a0**3                        ! Conserved FLRW density
     adot    = hub * a0                            ! a' (conformal) from H = a'/a
     hubdot  = -4.0d0 * pi * rho0 * asq / 3.0d0    ! H' from derivative of Friedmann eqns
