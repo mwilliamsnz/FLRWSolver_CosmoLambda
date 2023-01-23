@@ -21,7 +21,7 @@ subroutine FLRW_SingleMode (CCTK_ARGUMENTS)
   logical   :: perturb_x,perturb_y,perturb_z,perturb_all
 
   CCTK_REAL :: a0,rho0,asq,rhostar,hub,adot,hubdot,boxlen(3)
-  CCTK_REAL :: lambda(3),kval,kx,ky,kz,perturb_rho0,perturb_v0
+  CCTK_REAL :: wavelength(3),kval,kx,ky,kz,perturb_rho0,perturb_v0
   CCTK_REAL :: dphi1,dphi2,dphi3,kdiag_bg
   CCTK_REAL :: phi_ijk,deltaijk,delta_velijk(3)
   CCTK_REAL :: delta_test,dvel_test
@@ -64,8 +64,8 @@ subroutine FLRW_SingleMode (CCTK_ARGUMENTS)
 
   !
   ! wavenumber is the same in each direction
-  lambda = single_perturb_wavelength * boxlen
-  kval   = 2.0d0 * pi / lambda(1)
+  wavelength = single_perturb_wavelength * boxlen
+  kval   = 2.0d0 * pi / wavelength(1)
   kx = kval; ky = kval; kz = kval
 
   ! factors for the density and velocity perturbations, respectively: eqns. (28),(29) in Macpherson+(2017)
